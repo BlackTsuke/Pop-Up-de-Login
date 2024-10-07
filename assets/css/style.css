@@ -1,0 +1,164 @@
+@font-face {
+  font-family: 'Druk';
+  src: url('../Druk_Collection/Druk Family/Druk-Bold-Trial.otf');
+}
+
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+:root {
+  font-size: 62.5%;
+}
+
+body {
+  background-color: #F7CB46;
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+
+#container {
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  font-family: Druk;
+}
+
+#container h1 {
+  font-size: 15rem;
+  color: #E7A3CA;
+  text-shadow:
+    -2px -2px 0px black,
+    2px -2px 0px black,
+    -2px 2px 0px black,
+    2px 2px 0px black,
+    10px 10px 0px black;
+}
+
+#container .btn {
+  width: 30rem;
+  height: 5rem;
+  font-size: 2rem;
+  align-items: center;
+  background-color: #50FFB0;
+  box-shadow: 2px 2px 0px black;
+  transition: all 0.075s ease;
+  font-family: monospace;
+  font-weight: bold;
+}
+
+#container .btn:active {
+  transform: translateY(1px);
+  box-shadow: 0px 0px 0px;
+}
+
+#container2 {
+  position: relative;
+  border-radius: .875rem;
+  font-family: monospace;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50rem;
+  height: 30rem;
+  background-color: whitesmoke;
+  box-shadow: 10px 10px 0px black;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+  padding-top: 2rem;
+  gap: 2rem;
+  visibility: hidden;
+  opacity: 0;
+}
+
+#container2 .close {
+  position: fixed;
+  right: 0;
+  top: 0;
+  width: 4rem;
+  height: 4rem;
+  margin: 1rem;
+  font-size: 2rem;
+  border: 0;
+  cursor: pointer;
+  background: whitesmoke;
+}
+
+#container2 h1 {
+  font-size: 5rem;
+}
+
+#container2 p {
+  font-size: 2rem;
+}
+
+#container2 form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+#container2 form label {
+  font-size: 2rem;
+}
+
+#container2 form input {
+  width: 20rem;
+  height: 3rem;
+  font-size: 2rem;
+  border: 2px solid black;
+  outline: 0;
+  background-color: white;
+  font-weight: bold;
+  font-family: monospace;
+}
+
+.active#container2 {
+  visibility: visible;
+  opacity: 1;
+  animation-name: slideIn;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+#container2.slide-out {
+  animation-name: slideOut;
+  animation-duration: 2s;
+  animation-timing-function: ease;
+  animation-fill-mode: forwards;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+
+  to {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+}
+
+@keyframes slideOut {
+  from {
+    transform: translate(-50%, -50%);
+    opacity: 1;
+  }
+
+  to {
+    transform: translate(-50%, 100%);
+    opacity: 0;
+  }
+}
